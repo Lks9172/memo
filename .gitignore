@@ -1,0 +1,14 @@
+venv/
+
+.env
+
+db.sqlite3
+
+.idea/
+
+__pycache__/
+/db_vackup.sqlite3
+
+media/
+
+staticfiles/
