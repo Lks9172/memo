@@ -109,15 +109,12 @@ def like(request):
         user = request.user # 로그인한 유저를 가져온다.
         memo_id = request.POST.get('pk', None)
         memo = Memos.objects.get(pk = memo_id) #해당 메모 오브젝트를 가져온다.
-        print('1\n\n\n')
 
         if memo.likes.filter(id = user.id).exists(): #이미 해당 유저가 likes컬럼에 존재하면
             memo.likes.remove(user) #likes 컬럼에서 해당 유저를 지운다.
-            print('2\n\n\n')
             message = 'You disliked this'
         else:
             memo.likes.add(user)
-            print('3\n\n\n')
             message = 'You liked this'
 
     context = {'likes_count' : memo.total_likes, 'message' : message}

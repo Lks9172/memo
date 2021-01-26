@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form method="post" action="{% url 'login' %}" class="sign-in-form">
+    <form method="post" action="{% url 'signin' %}" class="sign-in-form">
   {%csrf_token%}
   <h2 class="sub-title"> 로그인 </h2>
   {% if form.errors %}
