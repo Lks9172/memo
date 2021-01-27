@@ -20,9 +20,9 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 # reading .env file
-environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 environ.Env.read_env(
     env_file=os.path.join(BASE_DIR, '.env')
 )
